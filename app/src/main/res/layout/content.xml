@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context=".DetailsActivity">
+
+
+    <daka.com.example.chen.daka.view.NoScrollViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/vp_view_pager">
+
+    </daka.com.example.chen.daka.view.NoScrollViewPager>
+
+    <RadioGroup
+        android:id="@+id/rg_group"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="#eee"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <RadioButton
+            android:id="@+id/btn_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/btn_home_selector"
+            android:textColor="@color/txt_group_button_selector"
+            android:gravity="center"
+            android:background="#eee"
+            android:text="首页"
+            />
+
+        <RadioButton
+            android:id="@+id/btn_tourpic"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/btn_tourpic_selector"
+            android:gravity="center"
+            android:background="#eee"
+            android:text="旅途"
+            android:textColor="@color/txt_group_button_selector"
+             />
+
+        <RadioButton
+            android:id="@+id/btn_chat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/btn_chat_selector"
+            android:gravity="center"
+            android:background="#eee"
+            android:text="聊天"
+            android:textColor="@color/txt_group_button_selector"
+             />
+
+        <RadioButton
+            android:id="@+id/btn_me"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/btn_me_selector"
+            android:gravity="center"
+            android:background="#eee"
+            android:text="我"
+            android:textColor="@color/txt_group_button_selector"
+             />
+    </RadioGroup>
+</LinearLayout>

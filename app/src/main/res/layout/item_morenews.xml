@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="6dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv_avatarthumburl"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@mipmap/pic_loading_small"
+            android:clickable="true"
+            android:layout_margin="5dp"
+            fresco:roundAsCircle="true"
+            />
+        <TextView
+            android:id="@+id/tv_nick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="阳光你好"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:layout_marginLeft="5dp"/>
+        <TextView
+            android:id="@+id/tv_age"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="20"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:layout_marginLeft="5dp"/>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_declaration"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="7dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="—溧阳、瓦屋山、丫髻山、神女湖、度假山庄、草莓基地"/>
+    <LinearLayout
+        android:layout_marginTop="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="出发日期:"
+            android:textSize="12sp"
+            android:layout_marginLeft="7dp"/>
+        <TextView
+            android:id="@+id/tv_starttime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:text="时间"
+            android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/tv_dayslong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全程3天"
+            android:textSize="12sp"
+            android:layout_marginLeft="7dp"/>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_marginTop="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:textSize="12sp"
+        android:singleLine="true"
+        android:layout_marginLeft="7dp"
+        android:text="#3月13日号出发，求约伴#早上登瓦屋山穿越至神女湖。中午到山脚下的度假山庄逛逛，优雅午餐..."/>
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="horizontal">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv_firstphotothumbur"
+            android:layout_marginLeft="7dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            fresco:fadeDuration="2000"
+            android:background="@mipmap/pic_loading_small"
+            />
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv_secondphotothumbur"
+            android:layout_marginLeft="7dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            fresco:fadeDuration="2000"
+            android:background="@mipmap/pic_loading_small"
+            />
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv_thirdphotothumbur"
+            android:layout_marginRight="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            fresco:fadeDuration="2000"
+            android:background="@mipmap/pic_loading_small"
+            />
+    </LinearLayout>
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#2f2fb3"/>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_margin="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp">
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageButton
+
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@mipmap/tour_tag"
+                android:id="@+id/imageButton3" />
+            <TextView
+                android:id="@+id/tv_tourtheme"
+                android:layout_marginLeft="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="旅行约伴"
+                android:layout_centerInParent="true"
+                android:textSize="14sp"
+                android:layout_alignBottom="@+id/imageButton3"
+                android:layout_toEndOf="@+id/imageButton3"
+                android:layout_marginStart="20dp" />
+            <ImageButton
+
+                android:layout_width="30dp"
+                android:layout_height="15dp"
+                android:background="@mipmap/view_count"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="35dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="14sp"
+                android:text="评论"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

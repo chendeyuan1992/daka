@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#ffd500">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <RelativeLayout
+                android:id="@+id/rl_home_search"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp">
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="北京市"
+                    android:textSize="18sp"
+                    android:textColor="#6e6a6a"
+                    android:id="@+id/tv_home"
+                    android:layout_marginStart="22dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/home_search_switch"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/tv_home"
+                    android:layout_marginStart="14dp"
+                    android:id="@+id/imageButton2" />
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="搜索目的地"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:background="#faf2ef"/>
+
+
+
+         <RelativeLayout
+             android:id="@+id/rl_add_new"
+             android:layout_width="wrap_content"
+             android:layout_height="60dp"
+             android:layout_centerVertical="true">
+             <ImageButton
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:background="@mipmap/icon_add_new"
+                 android:layout_alignBottom="@+id/textView2"
+                 android:layout_toStartOf="@+id/textView2"
+                 android:layout_marginEnd="10dp" />
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="发约伴"
+                 android:textColor="#6e6a6a"
+                 android:textSize="18sp"
+                 android:layout_centerVertical="true"
+                 android:layout_alignParentEnd="true"
+                 android:layout_marginEnd="10dp"
+                 android:id="@+id/textView2" />
+
+
+         </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+    <!--<com.viewpagerindicator.TabPageIndicator
+        android:id="@+id/indicator"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:layout_width="match_parent"
+
+
+        />-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@mipmap/plan_yellow_line"
+        />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+        />
+
+</LinearLayout>

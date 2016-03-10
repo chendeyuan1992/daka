@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        <dict>
+            <key>province</key>
+            <string>北京市</string>
+            <key>city</key>
+            <array>
+                <string>东城区</string>
+                <string>西城区</string>
+                <string>崇文区</string>
+                <string>宣武区</string>
+                <string>朝阳区</string>
+                <string>丰台区</string>
+                <string>石景山区</string>
+                <string>海淀区</string>
+                <string>门头沟区</string>
+                <string>房山区</string>
+                <string>通州区</string>
+                <string>顺义区</string>
+                <string>昌平区</string>
+                <string>大兴区</string>
+                <string>怀柔区</string>
+                <string>平谷区</string>
+                <string>密云县</string>
+                <string>延庆县</string>
+            </array>
+        </dict>
+        <dict>
+                    <key>province</key>
+                    <string>天津市</string>
+                    <key>city</key>
+                    <array>
+                        <string>和平区</string>
+                        <string>河东区</string>
+                        <string>河西区</string>
+                        <string>南开区</string>
+                        <string>河北区</string>
+                        <string>红桥区</string>
+                        <string>塘沽区</string>
+                        <string>汉沽区</string>
+                        <string>大港区</string>
+                        <string>东丽区</string>
+                        <string>西青区</string>
+                        <string>津南区</string>
+                        <string>北辰区</string>
+                        <string>武清区</string>
+                        <string>宝坻区</string>
+                        <string>宁河县</string>
+                        <string>静海县</string>
+                        <string>蓟县</string>
+                    </array>
+                </dict>
+                 <dict>
+                            <key>province</key>
+                            <string>台湾</string>
+                            <key>city</key>
+                            <array>
+                            </array>
+                        </dict>
+                        <dict>
+                            <key>province</key>
+                            <string>香港</string>
+                            <key>city</key>
+                            <array>
+                            </array>
+                        </dict>
+                <dict>
+                            <key>province</key>
+                            <string>澳门</string>
+                            <key>city</key>
+                            <array>
+                            </array>
+                        </dict>
+
+
+
+
+
+    </array>
+</plist>

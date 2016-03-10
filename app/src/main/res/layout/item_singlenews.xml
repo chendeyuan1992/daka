@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 单图的新闻item -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:padding="6dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_pic"
+        android:layout_width="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_height="100dp"
+        android:background="@mipmap/pic_loading_big"
+        />
+
+
+
+
+</LinearLayout>

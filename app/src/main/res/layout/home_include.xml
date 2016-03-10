@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="立即体验"
+            android:textColor="#c4560d"
+            android:layout_marginEnd="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/imageButton" />
+        <ImageButton
+
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/yellow_right_arrow"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="19dp"
+            android:id="@+id/imageButton" />
+
+
+
+</RelativeLayout>
