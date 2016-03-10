@@ -60,13 +60,7 @@ public class HomePager extends BasePager {
     private TabDetailPager tabDetailPager;
     //    private TabPageIndicator indicator;
 
-    /**
-     * 数据下载得接口
-     */
-   /* private String[] urls = {Contants.URL.HOME_PAGER
-            ,String.format(Contants.URL.HOME_PLACE, CONTENT[1])
-            ,String.format(Contants.URL.HOME_SHARE_CAR, CONTENT[2])
-            ,String.format(Contants.URL.HOME_SAME_CITY, CONTENT[3])};*/
+
 
 
     public HomePager(Activity activity) {
@@ -85,7 +79,7 @@ public class HomePager extends BasePager {
 
         datas = new ArrayList();
         for(int i = 0; i < CONTENT.length; i++) {
-            tabDetailPager = new TabDetailPager(mActivity);
+            tabDetailPager = new TabDetailPager(mActivity,i);
             datas.add(tabDetailPager);
 
         }
@@ -112,6 +106,27 @@ public class HomePager extends BasePager {
 
         //初始化自定义控件
         tabDetailPager.initViews();
+
+       /* //设置TabDetailPager的滑动监听事件
+        pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                datas.get(position).initData();//设置当前页面去加载数据
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });*/
+
+
         pager.setAdapter(new HomePagerAdapter(datas));
         //设置滚动条颜色#ffe602
         sliding_tabs.setSelectedIndicatorColors(Color.argb(255, 0xff, 0xe6, 0x02));
@@ -124,19 +139,7 @@ public class HomePager extends BasePager {
     }
 
 
-    /**
-     * 获得数据
-     * @return
-     */
 
-
-    /**
-     * if (listener !=null){
-     listener.getHomeHot(homeHot);
-     }
-
-     * @return
-     */
 
 
     public View getView(){

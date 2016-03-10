@@ -120,8 +120,8 @@
     <View
 
         android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="#2f2fb3"/>
+        android:layout_height="1dp"
+        android:background="#d6d6e1"/>
     <LinearLayout
         android:gravity="center"
         android:layout_margin="8dp"

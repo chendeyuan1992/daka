@@ -39,7 +39,7 @@ public class HomePagerAdapter extends PagerAdapter {
         TabDetailPager pager = data.get(position);
 //        container.removeAllViews();
         container.addView(pager.view);
-        ShareUtil.putInt("pager", 1);
+//        ShareUtil.putInt("pager", 1);
         pager.initData();
 
         return pager.view;

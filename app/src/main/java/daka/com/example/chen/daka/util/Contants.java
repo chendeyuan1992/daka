@@ -23,7 +23,7 @@ public interface Contants {
         /**
          * 首页拼车
          */
-        String HOME_CAR =HOME+ "TourThemeId=31002&LocName=%s";
+        String HOME_CAR =HOME+ "TourThemeId=30002&LocName=%s";
 
         /**
          * 首页同城

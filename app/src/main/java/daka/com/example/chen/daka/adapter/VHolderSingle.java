@@ -1,6 +1,7 @@
 package daka.com.example.chen.daka.adapter;
 
 import android.net.Uri;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 
@@ -27,7 +28,11 @@ public class VHolderSingle extends VHolder{
         super.render(HomeViewList);
         String str = HomeViewList.Banner.CoverThumbUrl;
 //        Log.d(TAG, "render: " + str);
-        Uri uri = Uri.parse(str);
-        simpleDraweeView.setImageURI(uri);
+        if (!TextUtils.isEmpty(str)){
+            Uri uri = Uri.parse(str);
+
+            simpleDraweeView.setImageURI(uri);
+        }
+
     }
 }
