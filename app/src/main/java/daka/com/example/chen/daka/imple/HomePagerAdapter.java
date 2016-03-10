@@ -17,6 +17,12 @@ public class HomePagerAdapter extends PagerAdapter {
     }
 
     @Override
+    public CharSequence getPageTitle(int position) {
+
+        return HomePager.CONTENT[position];
+    }
+
+    @Override
     public int getCount() {
         return data.size();
     }
@@ -29,9 +35,9 @@ public class HomePagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         TabDetailPager pager = data.get(position);
-        container.addView(pager.tvText);
+        container.addView(pager.view);
         pager.initData();
-        return pager.tvText;
+        return pager.view;
     }
 
     @Override

@@ -20,6 +20,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 
@@ -29,6 +30,7 @@ import daka.com.example.chen.daka.base.BasePager;
 import daka.com.example.chen.daka.imple.ChatPager;
 import daka.com.example.chen.daka.imple.HomePager;
 import daka.com.example.chen.daka.imple.MePager;
+import daka.com.example.chen.daka.imple.TabDetailPager;
 import daka.com.example.chen.daka.imple.TourpicPager;
 import daka.com.example.chen.daka.util.ShareUtil;
 
@@ -79,7 +81,7 @@ public class DetailsActivity extends AppCompatActivity {
         basePager = new BasePager(getActivity());
         homePager = new HomePager(getActivity());
 
-        homePager.fm = getSupportFragmentManager();//获得FragmentManager
+
 //        Log.d(TAG, "initData: " + getSupportFragmentManager() + homePager.fm);
 
 
@@ -220,7 +222,7 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         String name = data.getStringExtra("city");
-        Log.d(TAG, "onActivityResult: " + name);
+//        Log.d(TAG, "onActivityResult: " + name);
 
     }
     /**
@@ -229,4 +231,10 @@ public class DetailsActivity extends AppCompatActivity {
     public FragmentManager manager(){
         return getSupportFragmentManager();
     }
+
+    /*@Override
+    protected void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(new TabDetailPager(getActivity()));
+    }*/
 }

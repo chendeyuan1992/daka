@@ -130,11 +130,12 @@
         <RelativeLayout
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <ImageButton
 
                 android:layout_width="15dp"
                 android:layout_height="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@mipmap/tour_tag"
                 android:id="@+id/imageButton3" />
             <TextView
@@ -143,17 +144,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="旅行约伴"
-                android:layout_centerInParent="true"
+                android:padding="2dp"
                 android:textSize="14sp"
-                android:layout_alignBottom="@+id/imageButton3"
                 android:layout_toEndOf="@+id/imageButton3"
-                android:layout_marginStart="20dp" />
+                android:layout_marginStart="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true" />
             <ImageButton
 
                 android:layout_width="30dp"
                 android:layout_height="15dp"
                 android:background="@mipmap/view_count"
                 android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="35dp" />
@@ -161,7 +164,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textSize="14sp"
-                android:text="评论"
+                android:text="关注"
+                android:layout_marginTop="3dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true" />
         </RelativeLayout>

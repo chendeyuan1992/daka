@@ -47,6 +47,7 @@ public class CityActivity extends AppCompatActivity{
         cityRecyclerView = new CityRecyclerView(arrayList,this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(cityRecyclerView);
+
         cityRecyclerView.setOnItemClickListener(new CityRecyclerView.OnClickItemListener() {
             @Override
             public void onItemClick(int position) {

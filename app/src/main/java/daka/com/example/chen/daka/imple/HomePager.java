@@ -2,6 +2,7 @@ package daka.com.example.chen.daka.imple;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
@@ -12,6 +13,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
+import com.google.gson.Gson;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,8 +24,11 @@ import daka.com.example.chen.daka.CityActivity;
 import daka.com.example.chen.daka.R;
 import daka.com.example.chen.daka.base.BasePager;
 import daka.com.example.chen.daka.bean.HomeHot;
+import daka.com.example.chen.daka.util.Contants;
 import daka.com.example.chen.daka.util.JsonUtil;
+import daka.com.example.chen.daka.util.OkHttpUtil;
 import daka.com.example.chen.daka.util.ShareUtil;
+import daka.com.example.chen.daka.util.SlidingTabLayout;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -32,7 +39,7 @@ import okhttp3.Response;
  */
 public class HomePager extends BasePager {
     private static Handler handler = new Handler();
-    private static OkHttpClient okHttpClient = new OkHttpClient();
+
     private static final String TAG = "print";
 
     public View homeview;
@@ -47,8 +54,10 @@ public class HomePager extends BasePager {
 
 
 
-    public FragmentManager fm;
-//    private TabPageIndicator indicator;
+
+    private SlidingTabLayout sliding_tabs;
+    public static HomeHot homeHot;
+    //    private TabPageIndicator indicator;
 
     /**
      * 数据下载得接口
@@ -71,7 +80,7 @@ public class HomePager extends BasePager {
         flContent.addView(homeview);
         pager = (ViewPager) homeview.findViewById(R.id.pager);//得到首页信息
 
-//        indicator = (TabPageIndicator)homeview.findViewById(R.id.indicator);
+        sliding_tabs = (SlidingTabLayout) homeview.findViewById(R.id.sliding_tabs);
 
         datas = new ArrayList();
         for(int i = 0; i < CONTENT.length; i++) {
@@ -81,13 +90,8 @@ public class HomePager extends BasePager {
         }
 
 
-        //加载数据
 
-        //初始化自定义控件
 
-        pager.setAdapter(new HomePagerAdapter(datas));
-
-//        indicator.setViewPager(pager);
 
 
        /* if (fm !=null){
@@ -115,12 +119,36 @@ public class HomePager extends BasePager {
             }
         });
 
-//        getData(String.format(Contants.URL.HOME_HOT,province));//下载数据
+//
+        //加载数据
+
+        //初始化自定义控件
+
+        pager.setAdapter(new HomePagerAdapter(datas));
+        //设置滚动条颜色#ffe602
+        sliding_tabs.setSelectedIndicatorColors(Color.argb(255, 0xff, 0xe6, 0x02));
+
+        sliding_tabs.setCustomTabView(R.layout.tab_view, R.id.tabText);
+
+        sliding_tabs.setViewPager(pager);
+
 
     }
 
 
+    /**
+     * 获得数据
+     * @return
+     */
 
+
+    /**
+     * if (listener !=null){
+     listener.getHomeHot(homeHot);
+     }
+
+     * @return
+     */
 
 
     public View getView(){
@@ -128,46 +156,18 @@ public class HomePager extends BasePager {
     }
 
 
-    /**
-     * 获取json数据
-     */
-    public void getData(final String url){
+    public OnListener listener;
 
-        new Thread() {
-            @Override
-            public void run() {
-                Request request = new Request.Builder()
-                        .url(url)
-                        .build();
-                try{
-                    Response execute = okHttpClient.newCall(request).execute();
-                    final String str = execute.body().string();
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
 
-                            String json = str;
-                            getJson(json);
-                        }
-                    });
-//                    Log.d(TAG, "run: 同步get请求结果：" + str);
-                } catch (IOException e){
-                    e.printStackTrace();
-                }
-            }
-        }.start();
+    public void setListener(OnListener listener) {
+//        Log.d(TAG, "setOnItemClickListener: ---->3");
+        this.listener = listener;
     }
+    public interface OnListener{
 
+        void getHomeHot(HomeHot homeHot);
 
-    /**
-     * 解析json文件
-     * @param str
-     */
-    public static void getJson(String str){
-        HomeHot homeHot = JsonUtil.getNewsByJSON(str);
-        Log.d(TAG, "getJson: " + homeHot.toString());
     }
-
 
 
 
