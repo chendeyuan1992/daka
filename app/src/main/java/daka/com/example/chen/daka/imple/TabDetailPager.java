@@ -131,7 +131,7 @@ public class TabDetailPager {
 
  /*   @Subscribe
     public void onEvent(HomeHot homeHot){
-        Log.d(TAG, "initData: " + homeHot);
+        Log.d(TAG, "initData: " + homeHot);//evenbus发送数据
 
     }*/
 
