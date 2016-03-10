@@ -57,6 +57,7 @@ public class HomePager extends BasePager {
 
     private SlidingTabLayout sliding_tabs;
     public static HomeHot homeHot;
+    private TabDetailPager tabDetailPager;
     //    private TabPageIndicator indicator;
 
     /**
@@ -84,23 +85,10 @@ public class HomePager extends BasePager {
 
         datas = new ArrayList();
         for(int i = 0; i < CONTENT.length; i++) {
-            TabDetailPager tabDetailPager = new TabDetailPager(mActivity);
+            tabDetailPager = new TabDetailPager(mActivity);
             datas.add(tabDetailPager);
 
         }
-
-
-
-
-
-
-       /* if (fm !=null){
-            myPagerAdapter = new MyPagerAdapter(fm, datas);
-            pager.setAdapter(myPagerAdapter);
-        }*/
-
-
-
 
         String city = ShareUtil.getString("city");
 //        Log.d(TAG, "initData:-------------> " + city);
@@ -123,7 +111,7 @@ public class HomePager extends BasePager {
         //加载数据
 
         //初始化自定义控件
-
+        tabDetailPager.initViews();
         pager.setAdapter(new HomePagerAdapter(datas));
         //设置滚动条颜色#ffe602
         sliding_tabs.setSelectedIndicatorColors(Color.argb(255, 0xff, 0xe6, 0x02));

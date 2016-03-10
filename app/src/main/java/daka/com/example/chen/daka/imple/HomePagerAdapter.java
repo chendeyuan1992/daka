@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
+import daka.com.example.chen.daka.util.ShareUtil;
+
 /**
  * Created by chen on 2016/3/10.
  */
@@ -35,8 +37,11 @@ public class HomePagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         TabDetailPager pager = data.get(position);
+//        container.removeAllViews();
         container.addView(pager.view);
+        ShareUtil.putInt("pager", 1);
         pager.initData();
+
         return pager.view;
     }
 

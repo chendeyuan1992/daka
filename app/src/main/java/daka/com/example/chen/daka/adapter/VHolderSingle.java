@@ -26,7 +26,7 @@ public class VHolderSingle extends VHolder{
     public void render(HomeHot.DataEntity.HomeViewListEntity HomeViewList) {
         super.render(HomeViewList);
         String str = HomeViewList.Banner.CoverThumbUrl;
-        Log.d(TAG, "render: " + str);
+//        Log.d(TAG, "render: " + str);
         Uri uri = Uri.parse(str);
         simpleDraweeView.setImageURI(uri);
     }

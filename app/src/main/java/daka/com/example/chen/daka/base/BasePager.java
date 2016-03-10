@@ -19,7 +19,7 @@ public class BasePager {
     public BasePager(Activity activity) {
         mActivity = activity;//这是basepager在DetailsActivity得到的对象
         initViews();
-        initData();
+
 
     }
 

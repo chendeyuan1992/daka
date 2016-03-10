@@ -37,10 +37,10 @@ public class AdapterRecyclerView extends RecyclerView.Adapter{
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
         switch (viewType){
-            case 3:
+            /*case 3:
                 root  = inflater.inflate(R.layout.item_morenews, parent, false);
                 vholder = new VHolderMore(root);
-                break;
+                break;*/
             case 5:
                 root = inflater.inflate(R.layout.item_singlenews, parent, false);
                 vholder = new VHolderSingle(root);
@@ -55,7 +55,7 @@ public class AdapterRecyclerView extends RecyclerView.Adapter{
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
 
         VHolder vh = (VHolder)viewHolder;
-        Log.d(TAG, "onBindViewHolder: " + datas.get(position).toString());
+//        Log.d(TAG, "onBindViewHolder: " + datas.get(position).toString());
         vh.render(datas.get(position));
     }
 
