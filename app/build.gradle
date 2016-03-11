@@ -26,10 +26,9 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     compile 'com.android.support:recyclerview-v7:23.2.0'
-    compile 'com.facebook.fresco:fresco:0.9.0'
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
     compile 'com.google.code.gson:gson:2.6.1'
-    compile 'com.facebook.fresco:fresco:0.9.0'
     compile project(':androidplistparserapp')
     compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.facebook.fresco:fresco:0.9.0'
 }

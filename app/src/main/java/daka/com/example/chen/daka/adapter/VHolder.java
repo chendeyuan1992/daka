@@ -1,5 +1,6 @@
 package daka.com.example.chen.daka.adapter;
 
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -16,7 +17,7 @@ public class VHolder extends RecyclerView.ViewHolder
     }
 
     /* onBindViewHolder 绑定数据*/
-    public void render(HomeHot.DataEntity.HomeViewListEntity HomeViewList){
+    public void render(HomeHot.DataEntity.HomeViewListEntity HomeViewList,Activity mActivity){
 
     }
 

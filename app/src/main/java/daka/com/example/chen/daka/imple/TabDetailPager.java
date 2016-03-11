@@ -72,39 +72,46 @@ public class TabDetailPager {
     public void initData(){
         String city = ShareUtil.getString("city");
         String province = ShareUtil.getString("province");
-        Log.d(TAG, "initData: city---->" + city +"=====" + "province" +province);
+//        Log.d(TAG, "initData: city---->" + city +"=====" + "province" +province);
         String url = "";
-        if (TextUtils.isEmpty(province)) {
+     /*   if (TextUtils.isEmpty(province)) {
             //如果province为空的话那么就加载city,例如香港  澳门就没有，那么就直接设置为city
             url = String.format(urls[position],city);
         }else if(!TextUtils.isEmpty(province)){
             //如果province不为空但是这个字符串包含市这个字符串,也设置为city
-            url = String.format(urls[position],city);
+            if (province.contains("市")){
+                url = String.format(urls[position],city);
+            }
+
 
         }else{
-            //其他情况直接设置为province
+            //其他情况直接设置为province*/
             url = String.format(urls[position], province);
-        }
 
+        loadData(url);//加载数据
 
 
 
 //        getData(String.format(Contants.URL.HOME_HOT,province));//下载数据
 
 
-        Log.d(TAG, "initData: " + url);
+//        Log.d(TAG, "initData: " + url);
+
+
+
+
+    }
+
+    public void loadData(String url){
         OkHttpUtil.downJSON(url, new OkHttpUtil.OnDownDataListener() {
             @Override
             public void onResponse(String url, String json) {
                 Log.d(TAG, "onResponse: " +json);
 //                int flag = ShareUtil.getInt("pager");
 //                if (flag ==1){
-                    getJson(json);
+                getJson(json);
 //                    ShareUtil.putInt("pager",0);
 //                }
-
-
-
 
 
             }
@@ -114,15 +121,13 @@ public class TabDetailPager {
 
             }
         });
-
-
     }
     public  void getJson(String json){
         Gson gson = new Gson();
         homeHot = gson.fromJson(json,HomeHot.class);
         tab_detail_pager.setLayoutManager(new LinearLayoutManager(mActivity));
 //        Log.d(TAG, "getJson: " + homeHot);
-        tab_detail_pager.setAdapter(new AdapterRecyclerView(homeHot.Data.HomeViewList));
+        tab_detail_pager.setAdapter(new AdapterRecyclerView(homeHot.Data.HomeViewList,mActivity));
 
 //        tab_detail_pager.setAdapter(new AdapterRecyclerView(homeHot.Data.HomeViewList));
 //        EventBus.getDefault().post(homeHot);

@@ -29,8 +29,15 @@ public interface Contants {
          * 首页同城
          */
         String HOME_CITY = HOME+"TourThemeId=30000&LocName=%s";
+        /**
+         * 单布局点击后的接口
+         */
+        String PLANS = "http://www.duckr.cn/api/v4/search/theme/plans/?LocName=&ThemeId=10013&OrderStr=";
 
-
+        /**
+         * 个人主页
+         */
+        String PERSONAL = "http://www.duckr.cn/api/v4/personal/homepage/";
 
     }
 }

@@ -1,6 +1,7 @@
 package daka.com.example.chen.daka.adapter;
 
 
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,11 +22,12 @@ public class AdapterRecyclerView extends RecyclerView.Adapter{
     private static final String TAG = "print";
     private ArrayList<HomeHot.DataEntity.HomeViewListEntity> datas;
 
+    private Activity mActivity;
 
-
-    public AdapterRecyclerView( ArrayList<HomeHot.DataEntity.HomeViewListEntity> datas) {
-
+    public AdapterRecyclerView(ArrayList<HomeHot.DataEntity.HomeViewListEntity> datas,Activity mActivity) {
+        this.mActivity = mActivity;
         this.datas = datas;
+
     }
 
     /*根据item的样式，创建不同的item样式*/
@@ -36,16 +38,18 @@ public class AdapterRecyclerView extends RecyclerView.Adapter{
 
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
-        switch (viewType){
-                case 3:
-                root  = inflater.inflate(R.layout.item_morenews, parent, false);
-                vholder = new VHolderMore(root);
-                break;
-            case 5:
+        if (viewType==3) {
+
+            root = inflater.inflate(R.layout.item_morenews, parent, false);
+            vholder = new VHolderMore(root);
+
+        }else if (viewType == 5){
+
                 root = inflater.inflate(R.layout.item_singlenews, parent, false);
                 vholder = new VHolderSingle(root);
-                break;
+
         }
+
         return vholder;
     }
 
@@ -55,14 +59,14 @@ public class AdapterRecyclerView extends RecyclerView.Adapter{
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
 
         VHolder vh = (VHolder)viewHolder;
-//        Log.d(TAG, "onBindViewHolder: " + datas.get(position).toString());
-        vh.render(datas.get(position));
+//        Log.d(TAG, "onBindViewHolder: " +"====" + position);
+        vh.render(datas.get(position),mActivity);
     }
 
     /*设置Item的样式*/
     @Override
     public int getItemViewType(int position) {
-
+//        Log.d(TAG, "getItemViewType: " + position);
         return datas.get(position).Type;
     }
     /*设置Item的数据*/
