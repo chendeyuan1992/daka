@@ -89,8 +89,9 @@ public class TabDetailPager {
             url = String.format(urls[position], province);
 
         loadData(url);//加载数据
-
-
+        int i= 0;
+        int y =+i;
+        Log.d(TAG, "loadData: "+y);
 
 //        getData(String.format(Contants.URL.HOME_HOT,province));//下载数据
 
@@ -106,7 +107,7 @@ public class TabDetailPager {
         OkHttpUtil.downJSON(url, new OkHttpUtil.OnDownDataListener() {
             @Override
             public void onResponse(String url, String json) {
-                Log.d(TAG, "onResponse: " +json);
+//                Log.d(TAG, "onResponse: " +json);
 //                int flag = ShareUtil.getInt("pager");
 //                if (flag ==1){
                 getJson(json);

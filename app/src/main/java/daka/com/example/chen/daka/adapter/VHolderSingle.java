@@ -3,11 +3,15 @@ package daka.com.example.chen.daka.adapter;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import daka.com.example.chen.daka.BannerActivity;
 import daka.com.example.chen.daka.R;
@@ -20,25 +24,35 @@ public class VHolderSingle extends VHolder implements View.OnClickListener {
     private static final String TAG = "print";
     private SimpleDraweeView simpleDraweeView;
     public Activity mActivity;
+    private  int flag;
     public VHolderSingle(View root){
         super(root);
         simpleDraweeView = (SimpleDraweeView) root.findViewById(R.id.iv_sdv);
-        simpleDraweeView.setOnClickListener(this);
+
 
     }
 
 
     @Override
     public void render(HomeHot.DataEntity.HomeViewListEntity HomeViewList,Activity mActivity) {
-        super.render(HomeViewList,mActivity);
+        super.render(HomeViewList, mActivity);
         this.mActivity = mActivity;
-        String str = HomeViewList.Banner.CoverThumbUrl;
-        Log.d(TAG, "render: " + str);
-        if (!TextUtils.isEmpty(str)){
-            Uri uri = Uri.parse(str);//得到单布局文件的uri进行设置图片
 
-            simpleDraweeView.setImageURI(uri);
-        }
+
+//            Log.d(TAG, "render:--->single " +position);
+
+            simpleDraweeView.setOnClickListener(this);
+            String str = HomeViewList.Banner.CoverThumbUrl;
+//            Log.d(TAG, "render: " + str);
+            if (!TextUtils.isEmpty(str)){
+                Uri uri = Uri.parse(str);//得到单布局文件的uri进行设置图片
+
+                simpleDraweeView.setImageURI(uri);
+            }
+
+
+
+
 
     }
 

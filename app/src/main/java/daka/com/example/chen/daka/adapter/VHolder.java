@@ -1,8 +1,12 @@
 package daka.com.example.chen.daka.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import daka.com.example.chen.daka.bean.HomeHot;
 

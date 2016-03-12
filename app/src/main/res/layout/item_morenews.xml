@@ -84,15 +84,16 @@
         android:text="#3月13日号出发，求约伴#早上登瓦屋山穿越至神女湖。中午到山脚下的度假山庄逛逛，优雅午餐..."/>
     <LinearLayout
         android:layout_marginTop="8dp"
-        android:layout_width="127dp"
+        android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginBottom="8dp"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/sdv_firstphotothumbur"
             android:layout_marginLeft="7dp"
-            android:layout_width="match_parent"
+            android:layout_width="120dp"
+            android:visibility="invisible"
             android:layout_height="match_parent"
             fresco:fadeDuration="2000"
             fresco:placeholderImage="@mipmap/pic_loading_small"
@@ -104,19 +105,22 @@
 
             android:layout_height="match_parent"
             fresco:fadeDuration="2000"
-            android:layout_width="match_parent"
+            android:layout_width="120dp"
+            android:visibility="invisible"
             fresco:placeholderImage="@mipmap/pic_loading_small"
             />
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/sdv_thirdphotothumbur"
             android:layout_marginRight="7dp"
             android:layout_marginLeft="7dp"
+            android:visibility="invisible"
+            android:layout_width="120dp"
 
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
             fresco:fadeDuration="2000"
-
             fresco:placeholderImage="@mipmap/pic_loading_small"
+
+
             />
     </LinearLayout>
     <View
