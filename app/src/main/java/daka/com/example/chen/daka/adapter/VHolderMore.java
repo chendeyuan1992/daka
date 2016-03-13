@@ -25,64 +25,99 @@ import daka.com.example.chen.daka.MemberListActivity;
  */
 public class VHolderMore extends VHolder implements View.OnClickListener {
     public Activity mActivity;
-    private static final String TAG = "print";
+    /*private static final String TAG = "print";
     private SimpleDraweeView sdv_avatarthumburl;
     public SimpleDraweeView sdv_firstphotothumbur;
     public SimpleDraweeView sdv_secondphotothumbur;
     public SimpleDraweeView sdv_thirdphotothumbur;
-    private  int flag;
+    private  int flag;*/
 
     public VHolderMore(View root) {
         super(root);
 
-        sdv_avatarthumburl = (SimpleDraweeView) root.findViewById(R.id.sdv_avatarthumburl);
+        /*sdv_avatarthumburl = (SimpleDraweeView) root.findViewById(R.id.sdv_avatarthumburl);
         sdv_avatarthumburl.setOnClickListener(this);
 
         sdv_firstphotothumbur = (SimpleDraweeView) root.findViewById(R.id.sdv_firstphotothumbur);
         sdv_secondphotothumbur = (SimpleDraweeView) root.findViewById(R.id.sdv_secondphotothumbur);
 
-        sdv_thirdphotothumbur = (SimpleDraweeView) root.findViewById(R.id.sdv_thirdphotothumbur);
+        sdv_thirdphotothumbur = (SimpleDraweeView) root.findViewById(R.id.sdv_thirdphotothumbur);*/
     }
 
     @Override
-    public void render(HomeHot.DataEntity.HomeViewListEntity HomeViewList,Activity mActivity) {
-        super.render(HomeViewList,mActivity);
+    public void render(VHolder vh,HomeHot.DataEntity.HomeViewListEntity HomeViewList,Activity mActivity) {
+        super.render(vh,HomeViewList,mActivity);
         this.mActivity = mActivity;
 
 
 
 
             //设置人头的图片
-            String sdv_avatarthumburl_uri = HomeViewList.PartnerPlan.MemberList.get(0).AvatarThumbUrl;
-//        Log.d(TAG, "render: " + sdv_avatarthumburl_uri);
+        String sdv_avatarthumburl_uri = HomeViewList.PartnerPlan.MemberList.get(0).AvatarThumbUrl;
+        if (!TextUtils.isEmpty(sdv_avatarthumburl_uri)){
+            Uri uri_sdv_avatarthumburl = Uri.parse(sdv_avatarthumburl_uri);
+            vh.bindSimpleDraweeView(R.id.sdv_avatarthumburl, uri_sdv_avatarthumburl);
+        }
+
+/*//        Log.d(TAG, "render: " + sdv_avatarthumburl_uri);
             if (!TextUtils.isEmpty(sdv_avatarthumburl_uri)){
                 Uri uri_sdv_avatarthumburl = Uri.parse(sdv_avatarthumburl_uri);
                 sdv_avatarthumburl.setImageURI(uri_sdv_avatarthumburl);
-            }
+            }*/
 
             //设置图片展示
             String sdv_firstphotothumbur_uri = HomeViewList.PartnerPlan.FirstPhotoThumbUrl;
-
             if (!TextUtils.isEmpty(sdv_firstphotothumbur_uri)){
+                Uri uri_sdv_firstphotothumbur = Uri.parse(sdv_firstphotothumbur_uri);
+                vh.bindSimpleDraweeView(R.id.sdv_firstphotothumbur, uri_sdv_firstphotothumbur);
+                SimpleDraweeView sdv_firstphotothumbur = (SimpleDraweeView) vh.getView(R.id.sdv_firstphotothumbur);
+                sdv_firstphotothumbur.setVisibility(View.VISIBLE);
+            }
+
+
+
+            /*if (!TextUtils.isEmpty(sdv_firstphotothumbur_uri)){
 //            Log.d(TAG, "render:---->sdv_firstphotothumbur_uri " + sdv_firstphotothumbur_uri);
                 Uri uri_sdv_firstphotothumbur = Uri.parse(sdv_firstphotothumbur_uri);
                 sdv_firstphotothumbur.setImageURI(uri_sdv_firstphotothumbur);
                 sdv_firstphotothumbur.setVisibility(View.VISIBLE);
-            }
+            }*/
+
+
+            SimpleDraweeView sdv_secondphotothumbur = (SimpleDraweeView) vh.getView(R.id.sdv_secondphotothumbur);
+
             String sdv_secondphotothumbur_uri = HomeViewList.PartnerPlan.SecondPhotoThumbUrl;
             if (!TextUtils.isEmpty(sdv_secondphotothumbur_uri)){
+                Uri uri_sdv_secondphotothumbur = Uri.parse(sdv_secondphotothumbur_uri);
+                vh.bindSimpleDraweeView(R.id.sdv_secondphotothumbur, uri_sdv_secondphotothumbur);
+                sdv_secondphotothumbur.setVisibility(View.VISIBLE);
+            }else {
+                sdv_secondphotothumbur.setVisibility(View.INVISIBLE);
+            }
+
+           /* if (!TextUtils.isEmpty(sdv_secondphotothumbur_uri)){
 //                Log.d(TAG, "render: --->sdv_secondphotothumbur_uri" +sdv_secondphotothumbur_uri);
                 Uri uri_sdv_secondphotothumbur = Uri.parse(sdv_secondphotothumbur_uri);
                 sdv_secondphotothumbur.setImageURI(uri_sdv_secondphotothumbur);
                 sdv_secondphotothumbur.setVisibility(View.VISIBLE);
-            }
+            }*/
+
         String sdv_thirdphotothumbur_uri = HomeViewList.PartnerPlan.ThirdPhotoThumbUrl;
-        if (!TextUtils.isEmpty(sdv_thirdphotothumbur_uri)){
+        SimpleDraweeView sdv_thirdphotothumbur = (SimpleDraweeView) vh.getView(R.id.sdv_thirdphotothumbur);
+        if (!TextUtils.isEmpty(sdv_secondphotothumbur_uri)){
+            Uri uri_sdv_thirdphotothumbur = Uri.parse(sdv_thirdphotothumbur_uri);
+            vh.bindSimpleDraweeView(R.id.sdv_thirdphotothumbur, uri_sdv_thirdphotothumbur);
+            sdv_thirdphotothumbur.setVisibility(View.VISIBLE);
+        }else {
+            sdv_thirdphotothumbur.setVisibility(View.INVISIBLE);
+        }
+
+        /*if (!TextUtils.isEmpty(sdv_thirdphotothumbur_uri)){
 //            Log.d(TAG, "render: --->sdv_secondphotothumbur_uri" +sdv_secondphotothumbur_uri);
             Uri uri_sdv_thirdphotothumbur = Uri.parse(sdv_thirdphotothumbur_uri);
             sdv_thirdphotothumbur.setImageURI(uri_sdv_thirdphotothumbur);
             sdv_thirdphotothumbur.setVisibility(View.VISIBLE);
-        }
+        }*/
 
 
 

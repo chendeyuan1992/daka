@@ -27,15 +27,15 @@ public class VHolderSingle extends VHolder implements View.OnClickListener {
     private  int flag;
     public VHolderSingle(View root){
         super(root);
-        simpleDraweeView = (SimpleDraweeView) root.findViewById(R.id.iv_sdv);
+       /* simpleDraweeView = (SimpleDraweeView) root.findViewById(R.id.iv_sdv);*/
 
 
     }
 
 
     @Override
-    public void render(HomeHot.DataEntity.HomeViewListEntity HomeViewList,Activity mActivity) {
-        super.render(HomeViewList, mActivity);
+    public void render(VHolder vh,HomeHot.DataEntity.HomeViewListEntity HomeViewList,Activity mActivity) {
+        super.render(vh,HomeViewList, mActivity);
         this.mActivity = mActivity;
 
 

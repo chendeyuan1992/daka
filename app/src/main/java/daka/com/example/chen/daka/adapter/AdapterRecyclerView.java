@@ -82,7 +82,7 @@ public class AdapterRecyclerView extends RecyclerView.Adapter{
 //            Log.d(TAG, "onBindViewHolder: position" +position);
         }*/
 
-        vh.render(datas.get(position),mActivity);
+        vh.render(vh,datas.get(position),mActivity);
     }
 
     /*设置Item的样式*/
